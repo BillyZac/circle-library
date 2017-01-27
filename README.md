@@ -1,7 +1,9 @@
-This project is bootstrapped with [Create Elm App](https://github.com/halfzebra/create-elm-app).
+# Circle Library
 
-Below you will find some information on how to perform basic tasks.  
-You can find the most recent version of this guide [here](https://github.com/halfzebra/create-elm-app/blob/master/template/README.md).
+A media library!
+
+This was bootstrapped using create-elm-app. It's still in unejected mode — take note!
+
 
 ## Table of Contents
 - [Sending feedback](#sending-feedback)
@@ -20,9 +22,6 @@ You can find the most recent version of this guide [here](https://github.com/hal
     - [reactor](#reactor)
 - [Adding Images and Fonts](#adding-images-and-fonts)
 - [IDE setup for Hot Module Replacement](#ide-setup-for-hot-module-replacement)
-
-## Sending feedback
-You are very welcome with any [feedback](https://github.com/halfzebra/create-elm-app/issues)
 
 ## Installing Elm packages
 
@@ -47,7 +46,7 @@ var db = new PouchDB('mydb');
 
 ## Folder structure
 ```
-my-app/
+/
   .gitignore
   README.md
   elm-package.json
@@ -68,9 +67,6 @@ For the project to build, these files must exist with exact filenames:
 - `src/favicon.ico` is the icon you see in the browser tab;
 - `src/index.js` is the JavaScript entry point.
 
-You can delete or rename the other files.
-
-You may create subdirectories inside src.
 
 ## Available scripts
 In the project directory you can run:
