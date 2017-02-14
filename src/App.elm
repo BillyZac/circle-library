@@ -49,10 +49,6 @@ getEvents =
         |> Http.send Types.NewEvents
 
 
-
--- DECODERS
-
-
 eventDecoder : Decoder Event
 eventDecoder =
     Decode.map2 Event
@@ -63,10 +59,10 @@ eventDecoder =
 view : Model -> Html Msg
 view model =
     let
-        mediaItemsList =
-            List.map viewMediaItem model.mediaItems
+        eventsList =
+            List.map viewEvent model.events
     in
-        div [] (List.map viewEvent model.events)
+        div [] eventsList
 
 
 subscriptions : Model -> Sub Msg
