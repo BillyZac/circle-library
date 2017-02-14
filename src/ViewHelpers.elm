@@ -5,6 +5,7 @@ import Html.Attributes exposing (class, src, width, height, attribute, autoplay,
 import Types exposing (..)
 
 
+viewVideo : MediaItem -> Html msg
 viewVideo item =
     div
         [ class "video-item" ]
@@ -24,6 +25,7 @@ viewVideo item =
         ]
 
 
+viewMp3 : MediaItem -> Html msg
 viewMp3 item =
     div
         [ class "audio-item" ]
@@ -36,6 +38,7 @@ viewMp3 item =
         ]
 
 
+viewYouTube : MediaItem -> Html msg
 viewYouTube item =
     div
         [ class "audio-item" ]

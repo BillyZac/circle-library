@@ -1,8 +1,12 @@
 module Types exposing (..)
 
+import Http exposing (..)
+
 
 type Msg
     = NoOp
+    | GetEvents
+    | NewEvents (Result Http.Error String)
 
 
 type MediaProvider
