@@ -6,6 +6,7 @@ import Types exposing (..)
 type alias Model =
     { event : String
     , mediaItems : List MediaItem
+    , events : List Event
     }
 
 
@@ -26,4 +27,5 @@ initialModel =
           , description = "Funny Cat Doing Dharma! LOL"
           }
         ]
+    , events = []
     }

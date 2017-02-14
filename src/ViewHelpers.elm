@@ -1,6 +1,6 @@
-module ViewHelpers exposing (viewVideo, viewMediaItem)
+module ViewHelpers exposing (viewVideo, viewMediaItem, viewEvent)
 
-import Html exposing (Html, text, div, img, h1, h4, iframe, audio, ul)
+import Html exposing (Html, text, div, img, h1, h4, iframe, audio, ul, li, span)
 import Html.Attributes exposing (class, src, width, height, attribute, autoplay, controls)
 import Types exposing (..)
 
@@ -67,3 +67,13 @@ viewMediaItem item =
 
         YouTube ->
             viewYouTube item
+
+
+viewEvent : Event -> Html Msg
+viewEvent event =
+    div []
+        [ span []
+            [ text "Name: " ]
+        , span []
+            [ text event.name ]
+        ]

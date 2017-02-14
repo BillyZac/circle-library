@@ -1,7 +1,7 @@
 module App exposing (..)
 
 import Html exposing (Html, text, div, img, h1, h4, iframe, audio, ul)
-import ViewHelpers exposing (viewVideo, viewMediaItem)
+import ViewHelpers exposing (viewVideo, viewMediaItem, viewEvent)
 import Model exposing (Model, initialModel)
 import Types exposing (Msg, Event)
 import Http exposing (..)
@@ -19,12 +19,12 @@ update msg model =
         Types.GetEvents ->
             ( model, getEvents )
 
-        Types.NewEvents (Ok json) ->
+        Types.NewEvents (Ok events) ->
             let
                 _ =
-                    Debug.log "Fetch succeeded" json
+                    Debug.log "Fetch succeeded" events
             in
-                ( model, Cmd.none )
+                ( { model | events = events }, Cmd.none )
 
         Types.NewEvents (Err error) ->
             let
@@ -66,11 +66,7 @@ view model =
         mediaItemsList =
             List.map viewMediaItem model.mediaItems
     in
-        div []
-            [ h1 [] [ text model.event ]
-            , ul []
-                mediaItemsList
-            ]
+        div [] (List.map viewEvent model.events)
 
 
 subscriptions : Model -> Sub Msg
