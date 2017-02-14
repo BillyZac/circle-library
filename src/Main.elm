@@ -1,7 +1,9 @@
 module Main exposing (..)
 
 import App exposing (..)
+import Model exposing (Model)
 import Html exposing (programWithFlags)
+import Types exposing (Msg)
 
 
 main : Program String Model Msg
