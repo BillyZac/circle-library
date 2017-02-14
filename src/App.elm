@@ -3,8 +3,9 @@ module App exposing (..)
 import Html exposing (Html, text, div, img, h1, h4, iframe, audio, ul)
 import ViewHelpers exposing (viewVideo, viewMediaItem)
 import Model exposing (Model, initialModel)
-import Types exposing (Msg)
+import Types exposing (Msg, Event)
 import Http exposing (..)
+import Json.Decode as Decode exposing (Decoder, field, succeed)
 
 
 init : String -> ( Model, Cmd Msg )
@@ -36,11 +37,27 @@ update msg model =
             ( model, Cmd.none )
 
 
+eventsUrl : String
+eventsUrl =
+    "https://runkit.io/billyzac/5848387e51a98e00145131e9/branches/master"
+
+
 getEvents : Cmd Msg
 getEvents =
-    "https://runkit.io/billyzac/5848387e51a98e00145131e9/branches/master"
-        |> Http.getString
+    (Decode.list eventDecoder)
+        |> Http.get eventsUrl
         |> Http.send Types.NewEvents
+
+
+
+-- DECODERS
+
+
+eventDecoder : Decoder Event
+eventDecoder =
+    Decode.map2 Event
+        (field "name" Decode.string)
+        (field "id" Decode.int)
 
 
 view : Model -> Html Msg

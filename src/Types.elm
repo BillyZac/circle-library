@@ -6,7 +6,7 @@ import Http exposing (..)
 type Msg
     = NoOp
     | GetEvents
-    | NewEvents (Result Http.Error String)
+    | NewEvents (Result Http.Error (List Event))
 
 
 type MediaProvider
@@ -19,4 +19,10 @@ type alias MediaItem =
     { src : String
     , description : String
     , provider : MediaProvider
+    }
+
+
+type alias Event =
+    { name : String
+    , id : Int
     }
