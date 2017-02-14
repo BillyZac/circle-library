@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 body {
-  font-family: 'Source Sans Pro', 'Trebuchet MS', 'Lucida Grande', 'Bitstream Vera Sans', 'Helvetica Neue', sans-serif;
-  font-size: 30px;
-  margin: 0;
-  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 52px;
+  margin: 50px;
   color: #293c4b;
 }
 
